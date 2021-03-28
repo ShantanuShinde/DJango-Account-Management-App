@@ -1,0 +1,16 @@
+<html>
+    <meta charset="UTF-8"> 
+    <head>
+        <title>Django App</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'home.css' %}">
+    </head>
+    <body>
+        <h1><b>Django App</b></h1>
+        <form action="/register/" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Register">
+        </form>
+    </body>
+</html>
