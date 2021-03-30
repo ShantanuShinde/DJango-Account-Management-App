@@ -1,0 +1,14 @@
+{% load inlinecss %}
+{% inlinecss 'style.css' %}
+
+<html>
+    <meta charset="UTF-8"> 
+    <head>
+        <title>Django App</title>
+    </head>
+    <body>
+        <h1><b>Django App</b></h1>
+        <p>Verification Code: {{ ver_code }}</p>
+    </body>
+</html>
+{% endinlinecss %}

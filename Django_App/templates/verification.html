@@ -3,14 +3,14 @@
     <head>
         <title>Django App</title>
         {% load static %}
-        <link rel="stylesheet" href="{% static 'home.css' %}">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
     </head>
     <body>
         <h1><b>Django App</b></h1>
-        <form action="/register/" method="POST">
+        <form action="/verification/" method="POST">
             {% csrf_token %}
             {{ form }}
-            <input type="submit" value="Register">
+            <input type="submit" value="Verify">
         </form>
     </body>
 </html>

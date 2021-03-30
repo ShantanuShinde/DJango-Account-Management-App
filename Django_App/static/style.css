@@ -1,0 +1,56 @@
+body {
+    margin:0;
+    background-color: rgb(175, 221, 250);
+}
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3.5rem;
+    padding-top: 1%;
+    color: lightblue;
+    background-color: mediumseagreen;
+    width: 100%;
+    height: 15%;
+    text-align: center;
+    font-weight: 1000;
+    box-shadow: 0 .2rem 1.5rem black;
+}
+form {
+    font-size: 1.5rem;
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+    text-align: center;
+    background-color: mediumaquamarine;
+    padding: 5% 2%;
+    border-radius: 2rem;
+}
+
+form label {
+    color: ivory;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+    clear: left;
+    margin-left:20%
+}
+
+form input[type=submit] {
+    font-size: 1.5rem;
+    margin: 5% 30% 0 30%;
+    width: 40%;
+    height: 7%;
+    color: ivory;
+    background-color: mediumseagreen;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+form input[type=text], form input[type=email], form input[type=password], form input[type=number] {
+    float:right;
+    clear:right;
+    font-size: 1rem;
+    margin-right:20%
+}
+
+p {
+    font-size: 1.5rem;
+    color: ivory;
+}
