@@ -64,3 +64,5 @@ def login(request):
         form = LoginForm()
     return render(request, 'login.html', {'form':form})
 
+def main_page(request):
+    return render(request, 'main_page.html', {'username': request.session.get('username')})

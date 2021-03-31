@@ -7,4 +7,5 @@ urlpatterns = [
     path('verification/', views.verify),
     path('login/', views.login),
     path('ver_ack/', views.verify_ack),
+    path('main_page/', views.main_page),
 ]
