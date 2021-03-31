@@ -7,10 +7,16 @@
     </head>
     <body>
         <h1><b>Django App</b></h1>
-        <form action="" method="POST">
-            {% csrf_token %}
-            {{ form }}
-            <input type="submit" value="Register">
-        </form>
+        <div id="main_content">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Register" name="register" id="register">
+            </form>
+            <form action="/login/">
+                <p style="font-size: 1rem;">Already have an account?</p>
+                <input type="submit" value="Login" name="login">
+            </form>
+        </div>
     </body>
 </html>

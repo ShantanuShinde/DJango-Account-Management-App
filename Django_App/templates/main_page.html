@@ -1,0 +1,15 @@
+<html>
+    <meta charset="UTF-8"> 
+    <head>
+        <title>Django App</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        <h1><b>Django App</b></h1>
+        <div id="main_content">
+            <p id="ver_msg">Welcome back to DJango App, {{ username }}!</p>
+            
+        </div>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<html>
+    <meta charset="UTF-8"> 
+    <head>
+        <title>Django App</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        <h1><b>Django App</b></h1>
+        <div id="main_content">
+            <form action="/login/" method="POST">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Login" name="login" style="margin-top: 5%;">
+            </form>
+        </div>
+    </body>
+</html>

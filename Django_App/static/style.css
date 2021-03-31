@@ -3,6 +3,7 @@ body {
     background-color: rgb(175, 221, 250);
     text-align: center;
 }
+
 h1 {
     font-family: 'Courier New', Courier, monospace;
     font-size: 3.5rem;
@@ -15,7 +16,8 @@ h1 {
     font-weight: 1000;
     box-shadow: 0 .2rem 1.5rem black;
 }
-form {
+
+#main_content {
     font-size: 1.5rem;
     margin-left: 25%;
     margin-right: 25%;
@@ -34,9 +36,14 @@ form label {
     margin-left:20%
 }
 
+#register, #verify {
+    margin-top: 5%;
+}
+
 form input[type=submit] {
     font-size: 1.5rem;
-    margin: 5% 30% 0 30%;
+    margin-left: 30%;
+    margin-right: 30%;
     width: 40%;
     height: 7%;
     color: ivory;
@@ -51,7 +58,8 @@ form input[type=text], form input[type=email], form input[type=password], form i
     margin-right:20%
 }
 
-p {
+#ver_msg {
     font-size: 1.5rem;
     color: ivory;
+    margin-bottom: 7%;
 }

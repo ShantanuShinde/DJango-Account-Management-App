@@ -1,0 +1,15 @@
+<html>
+    <meta charset="UTF-8"> 
+    <head>
+        <title>Django App</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        <h1><b>Django App</b></h1>
+        <form action="/login/" method="POST">
+            <p id="ver_msg">You have been registered successfully. Thanks for joining Django App!</p>
+            <input type="submit" value="Login" name="login" style="margin-top: 5%;">
+        </form>
+    </body>
+</html>

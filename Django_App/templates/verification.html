@@ -7,10 +7,12 @@
     </head>
     <body>
         <h1><b>Django App</b></h1>
-        <form action="/verification/" method="POST">
-            {% csrf_token %}
-            {{ form }}
-            <input type="submit" value="Verify">
-        </form>
+        <div id="main_content">
+            <form action="/verification/" method="POST">
+                {% csrf_token %}
+                {{ form }}
+                <input id="verify" type="submit" value="Verify">
+            </form>
+        </div>
     </body>
 </html>

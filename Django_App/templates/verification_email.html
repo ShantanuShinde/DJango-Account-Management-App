@@ -8,7 +8,10 @@
     </head>
     <body>
         <h1><b>Django App</b></h1>
-        <p>Verification Code: {{ ver_code }}</p>
+        <div id="ver_msg">
+            <p>Thanks for registering, {{username}}. Use this verification code to activate your account</p>
+            <p>Verification Code: <span style="color: blue;">{{ ver_code }}</span></p>
+        </div>
     </body>
 </html>
 {% endinlinecss %}
