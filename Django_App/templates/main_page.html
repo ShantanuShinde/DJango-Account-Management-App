@@ -8,13 +8,12 @@
     <body>
         <h1><b>Django App</b></h1>
         <div id="main_content">
-            <p id="ver_msg">Welcome back to DJango App, {{ username }}!</p>
-            <img id="image" name="canvas"/>
+            {% static 'images' as base_url %}
+            <form action="/logout/" method="GET">
+                <p id="ver_msg">Welcome back to DJango App, {{ username }}!</p>
+                <img id="main_image" src="{{base_url}}/{{img}}" alt="Django">
+                <input type="submit" value="Logout" name="logout" style="margin-top: 5%;">
+            </form>
         </div>
-        <script>
-            var imagesArray = ["1.jpg", "2.jpg", "3.jpg"]
-            var num = Math.floor(Math.random() * 2)
-            document.canvas.src = "{% static 'images/" + imagesArray[num] + "' %}+";
-        </script>
     </body>
 </html>

@@ -1,13 +1,15 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
+from django.contrib.auth.password_validation import validate_password
 
 
-class RegisterForm(forms.Form):
+class RegisterForm(forms.ModelForm):
     username = forms.CharField(label="Username:", max_length=100, empty_value="Enter Username", required=True)
     email = forms.EmailField(label="Email:", empty_value="Enter Email", required=True)
     password = forms.CharField(label="Password:", empty_value="Enter Password:", required=True, widget = forms.PasswordInput(), min_length=6, max_length=12)
-    
+    # password = forms.CharField(label="Password:", empty_value="Enter Password:", widget = forms.PasswordInput, validators=[validate_password])
+
     def clean(self, *args, **kwargs):
         cleaned_data = self.cleaned_data
         if User.objects.filter(username=self.cleaned_data['username']).exists():
@@ -16,6 +18,11 @@ class RegisterForm(forms.Form):
             raise forms.ValidationError("Email has already been registered. Please use login to access your account")
         else:
             return cleaned_data
+
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password']
+    
 
 class VerificationForm(forms.Form):
     verification_code = forms.IntegerField(label="Verification Code", min_value=1111, max_value=9999, required=True)
@@ -45,4 +52,5 @@ class LoginForm(forms.Form):
         if not user:
             raise forms.ValidationError("Invalid Username or password!")
         else:
+            cleaned_data['user'] = user
             return cleaned_data

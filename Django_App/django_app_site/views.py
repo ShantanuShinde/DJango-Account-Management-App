@@ -4,6 +4,8 @@ from django.core.mail import send_mail
 from django.template import Context, loader
 from django.conf import settings
 from django.contrib.auth.models import User
+from django.contrib.auth import login, logout
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 import random
 
@@ -41,9 +43,13 @@ def verify(request):
     if request.method == 'POST':
         form = VerificationForm(request.POST, request=request)
         if form.is_valid():
-            user = User.objects.create_user(request.session.get("name"), request.session.get("email"), request.session.get("password"))
+            user = User.objects.create_user(request.session.get("username"), request.session.get("email"), request.session.get("password"))
             user.save()
             
+            username = request.session.get("username")
+            request.session.flush()
+            request.session['username'] = username
+
             return HttpResponseRedirect('/ver_ack/')
     else:
         form = VerificationForm(request=request)
@@ -52,17 +58,29 @@ def verify(request):
 def verify_ack(request):
     return render(request, 'verification_ack.html')
 
-def login(request):
+def user_login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
             request.session['username'] = form.cleaned_data["username"]
             request.session['password'] = form.cleaned_data["password"]
 
+            login(request, form.cleaned_data['user'])
+
             return HttpResponseRedirect('/main_page/')
     else:
         form = LoginForm()
     return render(request, 'login.html', {'form':form})
 
+@login_required
 def main_page(request):
-    return render(request, 'main_page.html', {'username': request.session.get('username')})
+    images = ["1.jpg","2.jpg","3.jpg"]
+    image = random.choice(images)
+
+    return render(request, 'main_page.html', {'username': request.session.get('username'), "img":image})
+
+def user_logout(request):
+    request.session.flush()
+    logout(request)
+
+    return HttpResponseRedirect('/')

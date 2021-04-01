@@ -24,7 +24,7 @@ h1 {
     width: 50%;
     text-align: center;
     background-color: mediumaquamarine;
-    padding: 5% 2%;
+    padding: 2% 2%;
     border-radius: 2rem;
 }
 
@@ -64,7 +64,9 @@ form input[type=text], form input[type=email], form input[type=password], form i
     margin-bottom: 7%;
 }
 
-#image {
-    margin-left: auto;
-    margin-right: auto;
+#main_image {
+    margin-left: 10%;
+    margin-right: 10%;
+    width:80%;
+    height: 80%;
 }
