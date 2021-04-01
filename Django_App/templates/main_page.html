@@ -8,12 +8,27 @@
     <body>
         <h1><b>Django App</b></h1>
         <div id="main_content">
-            {% static 'images' as base_url %}
-            <form action="/logout/" method="GET">
-                <p id="ver_msg">Welcome back to DJango App, {{ username }}!</p>
-                <img id="main_image" src="{{base_url}}/{{img}}" alt="Django">
-                <input type="submit" value="Logout" name="logout" style="margin-top: 5%;">
-            </form>
+            <div id="background">
+                <form action="/logout/" method="GET">
+                    <p id="ver_msg">Welcome back to DJango App, {{ username }}!</p>
+                    <!-- <img id="main_image" src="{{base_url}}/{{img}}" alt="Django"> -->
+                    <input type="submit" value="Logout" name="logout", id="login">
+                </form>
+                <form action="/change_cred/" method="GET">
+                    <input type="submit" value="Change Credentials" id="change_cred" name="change_cred">
+                </form>
+            </div>
         </div>
+        <!-- <style>
+            {% static 'images' as base_url %}
+            #main_content {
+                background-image: url({{base_url}}/{{img}});
+                background-color: rgba(102, 205, 170, 0.8);
+                background-blend-mode: lighten;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                height: 70%;
+            }
+        </style> -->
     </body>
 </html>

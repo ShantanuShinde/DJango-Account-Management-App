@@ -28,7 +28,7 @@ h1 {
     border-radius: 2rem;
 }
 
-form label {
+form label, #change_cred_txt {
     color: ivory;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     float: left;
@@ -36,7 +36,7 @@ form label {
     margin-left:20%
 }
 
-#register, #verify {
+#register, #verify, #username, #password, #login {
     margin-top: 5%;
 }
 
@@ -62,11 +62,4 @@ form input[type=text], form input[type=email], form input[type=password], form i
     font-size: 1.5rem;
     color: ivory;
     margin-bottom: 7%;
-}
-
-#main_image {
-    margin-left: 10%;
-    margin-right: 10%;
-    width:80%;
-    height: 80%;
 }
